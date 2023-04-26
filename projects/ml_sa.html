@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Portfolio - Maria Matos</title>
+		<link rel="stylesheet" href="../styles.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+
+	<!-- Navbar Section -->
+
+		<nav class="navbar"> 
+			<div class="navbar__container">
+				<a href="../index.html#main" id="navbar__logo"> Portfolio </a>
+				<div class="navbar__toggle" id="mobile-menu">
+					<spam class="bar"></spam>
+					<spam class="bar"></spam>
+					<spam class="bar"></spam>
+				</div>
+				<ul class="navbar__menu">
+					<li class="navbar__item">
+						<a href="../index.html#main" class="navbar__links"> Home </a>
+					</li>
+					<li class="navbar__item">
+						<a href="../index.html#about" class="navbar__links"> About </a>
+					</li>
+					<li class="navbar__item">
+						<a href="../index.html#projects" class="navbar__links"> Portfolio </a>
+					</li>
+					<li class="navbar__btn">
+						<a href="../index.html#contact" class="button"> Contact </a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- Header Section -->
+		<div class="projects_main">
+			<div class="projects_main__container">
+				<h1>Sentiment Analysis of Book Reviews:</h1>
+				<h2>Comparing Models - VADER and RoBERTa</h2>
+				<p></p>
+			</div>
+		</div>
+        <div class="projects_desc">
+            <ul>
+                <li><span>Goal</span></li>
+                <li>Compararing model performance<br>of VADER and RoBERTa</li>
+            </ul>
+            <ul>
+                <li><span>Methodology</span></li>
+                <li>Selecting the first 500 entries</li>
+				<li>Made with Python</li>
+            </ul>
+            <ul>
+                <li><span>Dataset Used</span></li>
+                <li>"Amazon Kindle Book Review for Sentiment Analysis"<br><a href="https://www.kaggle.com/datasets/meetnagadia/amazon-kindle-book-review-for-sentiment-analysis" target="_blank">Dataset link</a></li>
+            </ul>
+        </div>
+
+        <!--Results-->
+        <div class="intro">
+            <h3>Why sentiment analysis?</h3>
+			<p>Sentiment analysis is a form of natural language processing that finds, identifies and quantifies emotional motivation in text. 
+				It can be applied to marketing and product analysis purposes. [1]</p>
+			<p>In this project, I am going to compare the performances of VADER and RoBERTa in analysing book reviews published on Kindle.</p>
+        </div>
+		<div class="corpo1">
+			<h3>Users' scores</h3>
+			<p>In book reviews, it is a costume for users to rate books from 1 to 5 stars. 
+				In this dataset, it is applied the same scoring system. Here users give a quantitative rating (stars) and a qualitative rating (reviews).</p>
+			<p>If we visualise the number of reviews by stars, the majority are rated positive (3 or more stars).</p>
+			<img src="../images/reviews_by_star.png">
+		</div>
+		<div class="corpo2">
+			<h3>Scoring of VADER and RoBERTa</h3>
+			<p>With "VADER" and "RoBERTa" models, the sentimental quantification is made with "polarity scores". The models will assign a rating to the emotional categories of "negative", "neutral" and "positive".</p>
+			<p>The figure shown below represents the polarity scores made by "VADER" model according to the stars given by users:</p>
+			<img src="../images/vader_scores.png">
+			<p>With "RoBERTa" model, the following polatiry scores by star rating were created:</p>
+			<img src="../images/roberta_scores.png">
+			<p>In each sentimental category, the “VADER” model tends to converge the scores of the reviews. And on average, it does not assign high scores in either “positive” or “negative” categories.<br>
+				On the other hand, the “RoBERTa” model diverges the scores given by star. It is better at identifying emotional speech patterns than the “VADER” model.</p>
+		</div>
+		<div class="concl">
+			<h3>Comparing Performances: VADER vs. RoBERTa</h3>
+			<p>Looking at the figure below, the "RoBERTa" model is more confident rating sentiment than the "VADER" model.<br>
+				Furthermore, the "RoBERTa" model can give scores that best match the star ratings given by users.
+			</p>
+			<img src="../images/compare_performance.png">
+			<h3>Examples where the models became confused</h3>
+			<p>"VADER" - Identified as positive sentiment but is a 1-star review:</p>
+			<img src="../images/vader_pos.jpg">
+			<p>"RoBERTa" - Identified as positive sentiment but is a 1-star review:</p>
+			<img src="../images/robert_pos.jpg">
+			<p>"VADER" - Identified as negative sentiment but is a 5-stars review:</p>
+			<img src="../images/vader_neg.jpg">
+			<p>"RoBERTa" - Identified as negative sentiment but is a 5-stars review:</p>
+			<img src="../images/roberta_neg.png">
+			<p>[1] - "sentiment analysis (opinion mining)", <a href="https://www.techtarget.com/searchbusinessanalytics/definition/opinion-mining-sentiment-mining#:~:text=Sentiment%20analysis%2C%20also%20referred%20to,a%20product%2C%20service%20or%20idea." target="_blank">Link</a></p>
+		</div>
+
+
+
+		<!--Contact Section-->
+		<div class="footer">
+			<p>Made with HTML, CSS and JavaScript</p>
+		</div>
+
+		<script src="../app.js"></script>
+
+
+	</body>
+</html>

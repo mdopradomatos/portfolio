@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Portfolio - Maria Matos</title>
+		<link rel="stylesheet" href="styles.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+
+	<!-- Navbar Section -->
+
+		<nav class="navbar"> 
+			<div class="navbar__container">
+				<a href="#main" id="navbar__logo"> Portfolio </a>
+				<div class="navbar__toggle" id="mobile-menu">
+					<spam class="bar"></spam>
+					<spam class="bar"></spam>
+					<spam class="bar"></spam>
+				</div>
+				<ul class="navbar__menu">
+					<li class="navbar__item">
+						<a href="#main" class="navbar__links"> Home </a>
+					</li>
+					<li class="navbar__item">
+						<a href="#about" class="navbar__links"> About </a>
+					</li>
+					<li class="navbar__item">
+						<a href="#projects" class="navbar__links"> Portfolio </a>
+					</li>
+					<li class="navbar__btn">
+						<a href="#contact" class="button"> Contact </a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- Header Section -->
+		<div class="main">
+			<div class="main__container">
+				<h1>Maria Matos</h1>
+				<h2>Data Analyst</h2>
+				<p></p>
+			</div>
+		</div>
+
+		<!--About Section-->
+		<div id="about">
+			<div class="about__container">
+				<h2 class="sub-title">About Me</h2>
+				<p>Hi, my name is Maria Matos. I am starting my career as a data analyst.</p>
+				<p>Coming from a background in social sciences, I have experience collecting data using various tools, such as questionnaires and interviews. I also have theoretical and practical knowledge in data analysis and visualisation.</p>
+				<p>I have theoretical knowledge regarding social and human behaviour allowing me to give a fresh perspective to data that better reflects the real world.</p>
+				<div class="tab-title">
+					<h3>Skills</h3>
+				</div>
+				<div class="tab-contents">
+					<ul>
+						<li><span>Programming</span></li>
+						<li>Python, R<br>HTML/CSS, JavaScript</li>
+					</ul>
+					<ul>
+						<li><span>Machine Learning</span></li>
+						<li>Supervised Learning<br>Unsupervised Learning</li>
+					</ul>
+					<ul>
+						<li><span>Data Visualisation</span></li>
+						<li>Tableau<br> Ms Power BI</li>
+					</ul>
+				</div>
+				<div class="tab-contents">
+					<ul>
+						<li><span>Software Tools</span></li>
+						<li>IBM SPSS<br>Ms Excel<br>Jupyter Notebook<br>Orange<br>VS Code</li>
+					</ul>
+					<ul>
+						<li><span>Data Collection</span></li>
+						<li>Forms and Questionnaires<br>Interviews<br>Observation</li>
+					</ul>
+					<ul>
+						<li><span>Probability and Statistic</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!--Projects Section-->
+		<div id="projects">
+			<div class="container">
+				<h2 class="sub-title">Portfolio</h2>
+				<div class="project-list">
+					<div class="project">
+						<a href="https://public.tableau.com/app/profile/m.m4957/viz/GlobalMethaneGasEmissionsktin2022/GlobalMethaneGasEmissionsktin2022" target="_blank" class="project__button">
+							<img src="images/pic2.svg">
+							<div class="layer">
+							<h3>Interactive Dashboard in Tableau:<br>"Global Methane Gas Emissions (kt) in 2022"</h3>
+							<p></p>
+							</div>
+						</a>
+					</div>
+					<div class="project">
+						<a href="projects/ml_sa.html" class="project__button">
+							<img src="images/pic3.svg">
+							<div class="layer">
+							<h3 href="projects/ml_sa.html">Sentiment Analysis of Book Reviews:<br>Comparing Models - VADER and RoBERTa</h3>
+							<p></p>
+							</div>
+						</a>
+					</div>
+					<div class="project">
+						<a href="projects/am_rfm_cltv.html" class="project__button">
+							<img src="images/pic4.svg">
+							<div class="layer">
+							<h3>Marketing Campaign Analysis:<br> RFM & CLTV</h3>
+							<p></p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Contact Section-->
+		<div id="contact">
+			<h2>Contact</h2>
+			<div class="container">
+				<form name="submit-to-google-sheet">
+					<input type="text" name="Nome" placeholder="Your name" required>
+					<input type="email" name="E-mail" placeholder="Your E-mail" required>
+					<textarea name="Mensagem" rows="10" placeholder="Your message"></textarea>
+					<button type="submit" class="btn"><b>Send</b></button>
+				</form>
+				<span id="msg"></span>
+			</div>
+		</div>
+		<div class="footer">
+			<p>Made with HTML, CSS and JavaScript</p>
+		</div>
+
+		<script src="app.js"></script>
+
+		<script>
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbwz31856Aig802GywkZ65DO3r0LLfKUJ_W5X9sRNnmsersZ5jRYAJloqWfvMqgOojp9iQ/exec'
+			const form = document.forms['submit-to-google-sheet']
+			const msg = document.getElementById("msg")
+		  
+			form.addEventListener('submit', e => {
+			  e.preventDefault()
+			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => {
+					msg.innerHTML = "Message successfully sent!"
+					setTimeout(function(){
+						msg.innerHTML = ""
+					}, 5000)
+					form.reset()
+				})
+				.catch(error => console.error('Error!', error.message))
+			})
+		  </script>
+	</body>
+</html>

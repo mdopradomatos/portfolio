@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Portfolio - Maria Matos</title>
+		<link rel="stylesheet" href="../styles.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+
+	<!-- Navbar Section -->
+
+		<nav class="navbar"> 
+			<div class="navbar__container">
+				<a href="../index.html#main" id="navbar__logo"> Portfolio </a>
+				<div class="navbar__toggle" id="mobile-menu">
+					<spam class="bar"></spam>
+					<spam class="bar"></spam>
+					<spam class="bar"></spam>
+				</div>
+				<ul class="navbar__menu">
+					<li class="navbar__item">
+						<a href="../index.html#main" class="navbar__links"> Home </a>
+					</li>
+					<li class="navbar__item">
+						<a href="../index.html#about" class="navbar__links"> About </a>
+					</li>
+					<li class="navbar__item">
+						<a href="../index.html#projects" class="navbar__links"> Portfolio </a>
+					</li>
+					<li class="navbar__btn">
+						<a href="../index.html#contact" class="button"> Contact </a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- Header Section -->
+		<div class="projects_main">
+			<div class="projects_main__container">
+				<h1>Marketing Campaign Analysis:</h1>
+				<h2>RFM & CLTV</h2>
+				<p></p>
+			</div>
+		</div>
+        <div class="projects_desc">
+            <ul>
+                <li><span>Goals</span></li>
+                <li>Optimize the profits of a marketing campaign</li>
+				<li>Evaluate consumer behaviour<br>(Recency, Frequency, Monetary - RFM)</li>
+                <li>Evaluate consumer value for the company<br>(Customer Lifetime Value - CLTV)</li>
+            </ul>
+            <ul>
+                <li><span>Methodology</span></li>
+                <li>Made with Python</li>
+            </ul>
+            <ul>
+                <li><span>Dataset Used</span></li>
+                <li>"Marketing Campaign"<br><a href="https://www.kaggle.com/datasets/rodsaldanha/arketing-campaign" target="_blank">Dataset link</a></li>
+            </ul>
+        </div>
+
+        <!--Results-->
+        <div class="intro">
+            <h3>Why RFM and CLTV analysis?</h3>
+            <p>The application of an RFM (Recency, Frequency, Monetary) behavioural analysis creates the possibility of personalizing offers, while taking into account the consumer's profile. It can also be used to optimize customer retention.<br>
+				CTLV (Customer Lifetime Value) is a measure used to analyze the value that a customer has for a company. It seeks to predict the value consumers will have for the company based on their past value. This measure becomes crucial since keeping customers is more economically viable than trying to acquire new customers.<br>
+				The combination of these two types of analysis provides a more detailed framework for designing a strategy that seeks to optimize profits from a marketing campaign.
+			</p>
+        </div>
+		<div class="corpo1">
+			<h3>RFM analysis</h3>
+			<p>To calculate RFM, three variables are needed: one that represents the purchase frequency; a second variable that quantifies the amount spent on purchases; and the last one indicates when the last purchase was made.<br>
+				From these variables, RFM's scores are created to categorize customers.<br>
+				The following result was obtained:
+			</p>
+			<img src="../images/scatter_rfm.png">
+			<p>
+				Dots at a level greater than 20 in "Frequency", above 50 in "Recency", and with a colour in shades of orange or yellow represent the most valuable customers for the company.
+			</p>
+			<p>
+				Now the categorization of RFM will take place following this methodology [1]: 
+			</p>
+			<img src="../images/pic5.png">
+			<p>
+				Final result:
+			</p>
+			<img src="../images/rfm.png">
+			<img src="../images/rfm_table.png">
+			<p>
+				After the RFM segregation, strategies can be applied while taking into account the behavioural profile of consumers.
+			</p>
+		</div>
+		<div class="corpo2">
+			<h3>CLTV analysis</h3>
+			<p>
+				To calculate CLTV it is necessary to consider the average purchase, the frequency of purchase and the profit margin. This measurement seeks to predict the value consumers will have for a company, according to their past behaviour.
+When applying CLTV, the segregation of consumers will be made from the categories: from "A" (Consumers with the highest value for the company) to "D" (Consumers with the lowest value for the company).
+			</p>
+			<p>The following segregation of consumers was obtained:</p>
+			<img src="../images/cltv_table.png">
+		</div>
+		<div class="concl">
+			<p>[1] - "Customer segmentation using RFM analysis", <a href="https://nealanalytics.com/blog/customer-segmentation-using-rfm-analysis/" target="_blank">Link</a></p>
+		</div>
+
+		<!--Contact Section-->
+		<div class="footer">
+			<p>Made with HTML, CSS and JavaScript</p>
+		</div>
+
+		<script src="../app.js"></script>
+
+
+	</body>
+</html>
